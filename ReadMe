@@ -1,25 +1,7 @@
-<!-- NLP-based Text Analysis -->
+# Advanced Text Analysis using NLP: Sentiment Analysis, Named Entity Recognition (NER) & Topic Modeling (LDA)
+### Extracting emotional tone, entities, and topics from unstructured textual data
 
-<div style="background: linear-gradient(90deg, #00B8D9, #00ACC1); padding: 40px 20px; border-radius: 15px; text-align: center; animation: fadeIn 2s ease-in-out;">
-  <h1 style="text-align:center; color:white; font-size:40px; margin-bottom: 10px;">
-    Advanced Text Analysis using NLP: Sentiment Analysis, Named Entity Recognition (NER) & Topic Modeling (LDA)
-  </h1>
-  <h3 style="text-align:center; color:#ECEFF1; font-weight:normal; font-size: 20px;">
-    Extracting emotional tone, entities, and topics from unstructured textual data
-  </h3>
-</div>
-
-<style>
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-<br>
-
-
-This project analyzes a dataset of articles stored in `data/Text.csv` to uncover insights through various text analysis techniques: Word Cloud, Sentiment Analysis, Named Entity Recognition (NER), and Latent Dirichlet Allocation (LDA) Topic Modeling. The analysis was performed using Python in a Jupyter Notebook environment with libraries like `pandas`, `spacy`, `textblob`, `plotly`, `wordcloud`, and `scikit-learn`.
+- This project analyzes a dataset of articles stored in `data/Text.csv` to uncover insights through various text analysis techniques: Word Cloud, Sentiment Analysis, Named Entity Recognition (NER), and Latent Dirichlet Allocation (LDA) Topic Modeling. The analysis was performed using Python in a Jupyter Notebook environment with libraries like `pandas`, `spacy`, `textblob`, `plotly`, `wordcloud`, and `scikit-learn`.
 
 ---
 
