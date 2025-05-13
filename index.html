@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced Text Analysis using NLP</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    h1 {
+      font-size: 2em;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    h2 {
+      margin-top: 40px;
+    }
+    code {
+      background-color: #eee;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 90%;
+    }
+    pre {
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #ddd;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Advanced Text Analysis using NLP: Sentiment Analysis, Named Entity Recognition (NER) & Topic Modeling (LDA)</h1>
+<h3>Extracting emotional tone, entities, and topics from unstructured textual data</h3>
+
+<p>This project analyzes a dataset of articles stored in <code>data/Text.csv</code> to uncover insights through various text analysis techniques: Word Cloud, Sentiment Analysis, Named Entity Recognition (NER), and Latent Dirichlet Allocation (LDA) Topic Modeling. The analysis was performed using Python in a Jupyter Notebook environment with libraries like <code>pandas</code>, <code>spacy</code>, <code>textblob</code>, <code>plotly</code>, <code>wordcloud</code>, and <code>scikit-learn</code>.</p>
+
+<hr>
+
+<h2>Dataset Overview</h2>
+
+<p>The dataset (<code>data/Text.csv</code>) contains articles with titles and text content. A preview of the first few rows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Article (Excerpt)</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data analysis is the process of inspecting and...</td>
+      <td>Best Books to Learn Data Analysis</td>
+    </tr>
+    <tr>
+      <td>The performance of a machine learning algorith...</td>
+      <td>Assumptions of Machine Learning Algorithms</td>
+    </tr>
+    <tr>
+      <td>You must have seen the news divided into categ...</td>
+      <td>News Classification with Machine Learning</td>
+    </tr>
+    <tr>
+      <td>When there are only two classes in a classific...</td>
+      <td>Multiclass Classification Algorithms in Machine...</td>
+    </tr>
+    <tr>
+      <td>The Multinomial Naive Bayes is one of the vari...</td>
+      <td>Multinomial Naive Bayes in Machine Learning</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><strong>Encoding</strong>: Loaded with <code>latin-1</code> encoding.</li>
+  <li><strong>Size</strong>: Contains 34 articles (based on sentiment analysis count).</li>
+</ul>
+
+<hr>
+
+<h2>Analysis Techniques and Findings</h2>
+
+<h3>1. Word Cloud</h3>
+<p>A word cloud was generated to visualize frequent terms in article titles.</p>
+<img src="assets/Results/wordcloud.png" alt="word cloud">
+
+<ul>
+  <li><strong>Key Words</strong>: recorder, frameworks, stock, apis, multinomial, values, resources, apple, deep, computer, networks, assumptions, bayes, prediction, analysis, best, health, applications, news, machine, learning, clustering, insurance, introduction, learn, classification, algorithm, python, data, sentiment.</li>
+  <li><strong>Insights</strong>: Focus on machine learning and data science with terms like <code>machine</code>, <code>learning</code>, <code>data</code>, <code>python</code>.</li>
+</ul>
+
+<h3>2. Sentiment Analysis</h3>
+<p>Performed using TextBlob on the <code>Article</code> column.</p>
+
+<ul>
+  <li><strong>Mean Sentiment</strong>: 0.16 (slightly positive)</li>
+  <li><strong>Category Distribution</strong>:
+    <ul>
+      <li>Positive: 18 (52.9%)</li>
+      <li>Neutral: 11 (32.4%)</li>
+      <li>Negative: 5 (14.7%)</li>
+    </ul>
+  </li>
+</ul>
+
+<img src="assets/Results/Sentiment.png" alt="Sentiments">
+
+<p><strong>Conclusion</strong>: The articles are predominantly positive or neutral, suggesting an informative tone.</p>
+
+<h3>3. Named Entity Recognition (NER)</h3>
+<p>Performed using spaCy to identify and count named entities in the articles.</p>
+
+<img src="assets/Results/Frequency.png" alt="NER Frequency">
+
+<ul>
+  <li><strong>Top Entities</strong>: today, Machine Learning, one, September, Instagram, Pfizer, Apple, the K-Means, Data Scientist.</li>
+  <li><strong>Entity Types</strong>: Temporal, numerical, companies/products, and technical terms.</li>
+</ul>
+
+<h3>4. LDA Topic Modeling</h3>
+<p>LDA was used to identify 5 topics from the articles.</p>
+
+<img src="assets/Results/LDA.png" alt="LDA Topics">
+
+<ul>
+  <li><strong>Topic 1</strong>: learn, python, insurance, application...</li>
+  <li><strong>Topic 2</strong>: algorithm, python, learning, classification...</li>
+  <li><strong>Topic 3</strong>: analysis, sentiment, want, data...</li>
+  <li><strong>Topic 4</strong>: news, category, machine, website...</li>
+  <li><strong>Topic 5</strong>: clustering, stock, deep learning...</li>
+</ul>
+
+<p><strong>Insight</strong>: Overlapping ML-focused vocabulary across topics, diverse application areas.</p>
+
+<hr>
+
+<h2>Key Findings</h2>
+
+<ul>
+  <li><strong>Theme</strong>: Articles revolve around machine learning, Python, classification, and data analysis.</li>
+  <li><strong>Tone</strong>: Mostly positive or neutral.</li>
+  <li><strong>Entities</strong>: Include technical terms and company/product names.</li>
+  <li><strong>Topics</strong>: Tutorials, sentiment/news analysis, deep learning, and applications.</li>
+</ul>
+
+<hr>
+
+<h2>Methodology</h2>
+<ul>
+  <li><strong>Tools</strong>: Python, <code>pandas</code>, <code>spacy</code>, <code>textblob</code>, <code>wordcloud</code>, <code>plotly</code>, <code>scikit-learn</code></li>
+  <li><strong>Preprocessing</strong>: Lemmatization, stopword/digit removal for LDA</li>
+  <li><strong>Visualizations</strong>: Word Cloud, Plotly with Viridis color scheme</li>
+</ul>
+
+<hr>
+
+<h2>Usage</h2>
+<ol>
+  <li>Install dependencies:
+    <pre><code>pip install pandas spacy textblob wordcloud plotly scikit-learn
+python -m spacy download en_core_web_sm</code></pre>
+  </li>
+  <li>Place <code>Text.csv</code> in the <code>data/</code> directory</li>
+  <li>Run the notebook and explore Plotly charts</li>
+</ol>
+
+<hr>
+
+<h2>Future Work</h2>
+<ul>
+  <li>Expand dataset for richer insights</li>
+  <li>Fine-tune topic modeling parameters</li>
+  <li>Enhance sentiment analysis with subjectivity</li>
+  <li>NER filtering by entity types (PERSON, ORG, etc.)</li>
+</ul>
+
+<hr>
+
+<h2 class="center">Author</h2>
+<div class="center">
+  <img src="assets/PYE.svg" alt="Author Banner">
+</div>
+<p class="center"><strong>Author</strong>: Pavan Yellathakota<br>
+<strong>Date</strong>: FEB 2025</p>
+
+<hr>
+
+<h2>Contact Information</h2>
+<ul>
+  <li><strong>Email</strong>: <a href="mailto:pavanyellathakota@gmail.com">pavanyellathakota@gmail.com</a></li>
+  <li><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/pavanyellathakota/" target="_blank">Pavan Yellathakota</a></li>
+  <li><strong>GitHub</strong>: <a href="https://github.com/PavanYellathakota" target="_blank">Pavan Yellathakota</a></li>
+  <li><strong>Portfolio</strong>: <a href="https://pye.pages.dev" target="_blank">pye.pages.dev</a></li>
+</ul>
+
+</body>
+</html>
