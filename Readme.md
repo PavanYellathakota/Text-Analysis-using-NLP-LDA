@@ -136,10 +136,6 @@ LDA was used to identify 5 topics from the preprocessed article text, with top w
   
 ## Author
 
-<div align="center">
-  <img src="assets/PYE.svg" alt="Author Banner" style="width:100%; height:auto; border-radius: 8px;">
-</div>
-
 **Author**: [Pavan Yellathakota]  
 **Date**: FEB 2025  
 
@@ -149,7 +145,7 @@ LDA was used to identify 5 topics from the preprocessed article text, with top w
 
 You can reach out to me through the following channels:
 
-- **Email**: [pavanyellathakota@gmail.com](mailto:pavanyellathakota@gmail.com)
+- **Email**: [pavanyellathakota@gmail.com](mailto:pavan.yellathakota.ds@gmail.com)
 - **LinkedIn**: [Pavan Yellathakota](https://www.linkedin.com/in/pavanyellathakota/)
 
 For more projects and resources, check out:
